@@ -10,7 +10,7 @@
 # 用字典表示学生成绩 key:value 多个元素用,隔开
 info = {"语文": 90, "数学": 80, "英语": 92}
 # print(type(info))
-print(info)
+# print(info)
 
 # key,value的类型要求
 # key 一般是字符串和数字； value 支持任意python支持的数据结构
@@ -22,7 +22,7 @@ print(info)
 # print(info_)
 
 # 如何获取字典里面的内容：用变量[key]   如果key不存在，报key error
-print(info['语文'])
+# print(info['语文'])
 
 # 往字典中添加数据: 变量[key] = value
 # info['物理'] = 88
@@ -68,5 +68,52 @@ print(info['语文'])
 # print(list(info.keys()))
 
 # value():遍历value，用list()转换成数组
-print(info.values())
-print(list(info.values()))
+# print(info.values())
+# print(list(info.values()))
+
+# pop(key)：删除键值对，返回整个key的value
+# print(info.pop("语文"))
+# print(info)
+
+# 数组list中可以放字典
+# info_list = [{"语文": 90, "数学": 80, "英语": 92}, {"语文": 20, "数学": 50, "英语": 72}]
+# print(info_list[1])
+# print(info_list[1]["语文"])
+
+
+"""
+题目：实现购物车功能。程序运行后让购物车输入水果的编号，然后让购物车内水果数量增加
+"""
+items = {1: "苹果", 2: "香蕉", 3: "芒果"}
+items_keys = list(items.keys())
+shopcart = {"苹果": 0, "香蕉": 0, "芒果": 0}
+
+while True:
+    print("当前购物车内： ", str(shopcart))
+    num = int(input("请选择你要做什么，购物输入1，退出程序输入2： "))
+    if num == 1:
+        while True:
+            print(str(items))
+            choose_num = int(input("请选择商品的号码："))
+            if choose_num not in items_keys:
+                print("商品号码不存在，请重新选择~")
+                continue
+            else:
+                shopcart[items[choose_num]] += 1
+                num = int(input("继续购物请按1，退出请按2："))
+                if num == 1:
+                    continue
+                else:
+                    break
+    elif num == 2:
+        print("程序已退出")
+        break
+    else:
+        print("输入错误，请重新选择： ")
+        continue
+
+
+
+
+
+
