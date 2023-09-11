@@ -61,5 +61,3 @@ b = {'a', 'd'}
 
 # union() 取并集
 # print(a.union(b))
-
-#
